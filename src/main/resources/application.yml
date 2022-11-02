@@ -1,0 +1,14 @@
+server:
+  port: 8081
+#spring:
+#  application:
+#    name: ob-rest
+#  datasource:
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:file:C:/data/sample
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
