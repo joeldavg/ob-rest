@@ -47,7 +47,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public boolean existById(Long id) {
         return bookRepository.existsById(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteAll() {
+        bookRepository.deleteAll();
     }
 }

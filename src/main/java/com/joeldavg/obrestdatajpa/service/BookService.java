@@ -19,4 +19,5 @@ public interface BookService {
 
     boolean existById(Long id);
 
+    void deleteAll();
 }
