@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LaptopServiceImpl implements LaptopService {
@@ -25,6 +26,35 @@ public class LaptopServiceImpl implements LaptopService {
     @Transactional
     public Laptop save(Laptop laptop) {
         return laptopRepository.save(laptop);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Laptop> findOneById(Long id) {
+        return laptopRepository.findById(id);
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return laptopRepository.existsById(id);
+    }
+
+    @Override
+    @Transactional
+    public Laptop update(Laptop laptop) {
+        return laptopRepository.save(laptop);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        laptopRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteAll() {
+        laptopRepository.deleteAll();
     }
 
 }

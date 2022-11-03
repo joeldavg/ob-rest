@@ -25,26 +25,4 @@ public class SwaggerConfig {
                         .url("https://springshop.wiki.github.org/docs"));
     }
 
-    /*@Bean
-    public Docket api() {
-
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
-    }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfo("Spring Boot Book API REST",
-                "Library Api Rest docs",
-                "1.0",
-                "http://www.google.com",
-                new Contact("Joel Guzman", "http://www.google.com", "joel@mail.com"),
-                "MIT",
-                "http://www.google.com",
-                Collections.emptyList());
-    }*/
-
 }

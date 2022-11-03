@@ -38,7 +38,7 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<Book> save(@RequestBody Book book) {
+    public ResponseEntity<Book> create(@RequestBody Book book) {
 
         if (book.getId() != null) {
             LOG.warn("Tryin to create a book with Id");
@@ -59,16 +59,18 @@ public class BookController {
         }
 
         Optional<Book> bookDB = bookService.findById(id);
-        bookDB.ifPresent(bookNew -> {
-            bookNew.setAuthor(book.getAuthor());
-            bookNew.setPrice(book.getPrice());
-            bookNew.setPages(book.getPages());
-            bookNew.setOnline(book.getOnline());
-            bookNew.setTitle(book.getTitle());
-            bookNew.setReleaseDate(book.getReleaseDate());
+        bookDB.ifPresent(bookUpdate -> {
+            bookUpdate.setAuthor(book.getAuthor());
+            bookUpdate.setPrice(book.getPrice());
+            bookUpdate.setPages(book.getPages());
+            bookUpdate.setOnline(book.getOnline());
+            bookUpdate.setTitle(book.getTitle());
+            bookUpdate.setReleaseDate(book.getReleaseDate());
         });
 
-        return ResponseEntity.ok(bookService.update(book));
+        LOG.info("Updating book: " + bookDB.get());
+
+        return ResponseEntity.ok(bookService.update(bookDB.get()));
     }
 
     @DeleteMapping("{id}")
