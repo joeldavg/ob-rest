@@ -31,6 +31,7 @@ class LaptopControllerTest {
     void setUp() {
         restTemplateBuilder = this.restTemplateBuilder.rootUri("http://localhost:" + port + "/api/laptops");
         testRestTemplate = new TestRestTemplate(restTemplateBuilder);
+        testRestTemplate.delete("/");
     }
 
     @Test

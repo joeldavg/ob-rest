@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.joeldavg</groupId>
     <artifactId>ob-rest-datajpa</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>ob-rest-datajpa</name>
     <description>ob-rest-datajpa</description>
     <properties>

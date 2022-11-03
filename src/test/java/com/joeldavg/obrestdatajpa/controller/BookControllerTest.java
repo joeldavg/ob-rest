@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -20,6 +21,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookControllerTest {
 
     private TestRestTemplate testRestTemplate;
+
+    @Value("${app.message}")
+    private String expected;
 
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
@@ -42,7 +46,8 @@ class BookControllerTest {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals("Hola Mundo que tal vamos!! Hasta luego!", response.getBody());
+
+        assertEquals(expected, response.getBody());
     }
 
     @Test

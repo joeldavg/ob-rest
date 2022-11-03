@@ -1,5 +1,14 @@
+spring:
+  profiles:
+    active: prod
+
 server:
-  port: 8081
+  port: 8080
+
+app:
+  message: Hola mundo desde default
+  envVariable: ${EXAMPLE_MESSAGE:default value}
+
 #  error:
 #    include-message: never
 #    include-stacktrace: never
