@@ -6,7 +6,7 @@ server:
   port: 8080
 
 app:
-  message: Hola mundo desde default
+  message: Hola mundo desde Default
   envVariable: ${EXAMPLE_MESSAGE:default value}
 
 #  error:
