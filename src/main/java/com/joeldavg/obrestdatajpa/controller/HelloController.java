@@ -15,4 +15,9 @@ public class HelloController {
         return message;
     }
 
+    @GetMapping("bootstrap")
+    public String bootstrap() {
+        return message + " bootstrap";
+    }
+
 }

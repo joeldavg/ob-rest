@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: prod
+#  security:
+#    user:
+#      name: joeldavg
+#      password: 1234
 
 springdoc:
   swagger-ui:
